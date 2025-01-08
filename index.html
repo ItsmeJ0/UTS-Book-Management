@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container my-5">
+    <h1 class="text-center">Book Management</h1>
+
+    <!-- Form Tambah Buku -->
+    <div class="card my-4">
+      <div class="card-body">
+        <h5 class="card-title">Tambah Buku</h5>
+        <form id="addBookForm">
+          <div class="mb-3">
+            <label for="title" class="form-label">Judul</label>
+            <input type="text" class="form-control" id="title" required>
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Penulis</label>
+            <input type="text" class="form-control" id="author" required>
+          </div>
+          <div class="mb-3">
+            <label for="year" class="form-label">Tahun</label>
+            <input type="number" class="form-control" id="year">
+          </div>
+          <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <input type="text" class="form-control" id="genre">
+          </div>
+          <button type="submit" class="btn btn-primary">Tambah Buku</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Daftar Buku -->
+    <div>
+      <h2>Daftar Buku</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Judul</th>
+            <th>Penulis</th>
+            <th>Tahun</th>
+            <th>Genre</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="bookList">
+          <tr>
+            <td colspan="6" class="text-center">Memuat data...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Form Edit Buku -->
+  <!-- Form untuk edit buku -->
+  <!-- Form Edit Buku -->
+  <form id="editBookForm" style="display:none;" class="card my-4 p-3">
+    <h5 class="card-title">Edit Buku</h5>
+    <div class="mb-3">
+      <input type="hidden" id="editBookId">
+      <label for="editTitle" class="form-label">Judul</label>
+      <input type="text" id="editTitle" class="form-control" placeholder="Title">
+    </div>
+    <div class="mb-3">
+      <label for="editAuthor" class="form-label">Penulis</label>
+      <input type="text" id="editAuthor" class="form-control" placeholder="Author">
+    </div>
+    <div class="mb-3">
+      <label for="editYear" class="form-label">Tahun</label>
+      <input type="number" id="editYear" class="form-control" placeholder="Year">
+    </div>
+    <div class="mb-3">
+      <label for="editGenre" class="form-label">Genre</label>
+      <input type="text" id="editGenre" class="form-control" placeholder="Genre">
+    </div>
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-success">Update Buku</button>
+      <button type="button" onclick="cancelEdit()" class="btn btn-secondary">Batal</button>
+    </div>
+  </form>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
